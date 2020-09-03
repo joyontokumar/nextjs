@@ -1,0 +1,69 @@
+.team-area {
+    .team-card {
+        .member-img {
+            position: relative;
+            img {
+                width: 100%;
+            }
+            .member-social {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 100%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s linear;
+                ul {
+                    li {
+                        display: inline-block;
+                        margin-right: 10px;
+                        a {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s linear;
+            }
+        }
+        .member-description {
+            box-shadow: 0 3px 28px rgb(0 0 1 / 27%);
+            padding: 20px;
+            text-align: center;
+            .name {
+                font-size: 19px;
+                text-transform: capitalize;
+                font-weight: 600;
+            }
+            .designation {
+                font-style: italic;
+                font-weight: 400;
+            }
+        }
+        &:hover {
+            .member-img {
+                &:after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            .member-social {
+                opacity: 1;
+                visibility: visible;
+                z-index: 1;
+            }
+        }
+    }
+}
